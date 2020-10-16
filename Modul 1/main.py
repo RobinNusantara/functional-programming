@@ -40,10 +40,10 @@ def isPrimeNumber(number):
             return False
     return True
 
-def isEvenNumber(number):
-    if number % 2 == 0:
-        return True
-    return False
+# def isEvenNumber(number):
+#     return number % 2 == 0
+
+isEvenNumber = lambda x: x % 2 == 0
 
 for number in numbers:
     if number > 1:
