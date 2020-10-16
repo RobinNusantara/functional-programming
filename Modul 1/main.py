@@ -16,7 +16,9 @@ print(f'\nIsi List {numbers}')
 print('\n<<<Kegiatan 1>>>\n')
 
 for number in numbers:  
-    if number > 1:
+    if number == 1:
+        print(f'{number} termasuk bilangan Ganjil')
+    else:
         isPrime = True
         for i in range(2, number):
             if number % i == 0:
@@ -27,8 +29,6 @@ for number in numbers:
             print(f'{number} termasuk bilangan Genap')
         else:
             print(f'{number} termasuk bilangan Ganjil')
-    elif number == 1:
-        print(f'{number} termasuk bilangan Ganjil')
 
 #Kegiatan 2
 
@@ -46,14 +46,14 @@ def isPrimeNumber(number):
 isEvenNumber = lambda x: x % 2 == 0
 
 for number in numbers:
-    if number > 1:
+    if number == 1:
+        print(f'{number} termasuk bilangan Ganjil')
+    else:
         if isPrimeNumber(number):
             print(f'{number} termasuk bilangan Prima')
         elif isEvenNumber(number):
             print(f'{number} termasuk bilangan Genap')
         else:
             print(f'{number} termasuk bilangan Ganjil')
-    elif number == 1:
-        print(f'{number} termasuk bilangan Ganjil')
 
 ##Robb

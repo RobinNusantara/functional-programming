@@ -2,8 +2,10 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 console.log('\n<<Kegiatan 1>>\n')
 
-numbers.map((number) => {
-    if (number > 1) {
+for (number of numbers) {
+    if (number == 1) {
+        console.log(`${number} termasuk bilangan Ganjil`)
+    } else {
         let isPrime = true
         for (i = 2; i < number; i++) {
             if (number % i == 0) {
@@ -17,14 +19,12 @@ numbers.map((number) => {
         } else {
             console.log(`${number} termasuk bilangan Ganjil`)
         }
-    } else if (number == 1) {
-        console.log(`${number} termasuk bilangan Ganjil`)
     }
-})
+}
 
 console.log('\n<<Kegiatan 2>>\n')
 
-const isPrimeNumber = (number) => {
+function isPrimeNumber (number) {
     for (i = 2; i < number; i++) {
         if (number % i == 0) return
     }
@@ -33,7 +33,7 @@ const isPrimeNumber = (number) => {
 
 const isEvenNumber = (number) => number % 2 == 0
 
-numbers.map((number) => {
+numbers.map(function(number) {
     if (number > 1) {
         if (isPrimeNumber(number)) {
             console.log(`${number} termasuk bilangan Prima`)
