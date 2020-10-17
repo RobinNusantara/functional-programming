@@ -34,7 +34,9 @@ function isPrimeNumber (number) {
 const isEvenNumber = (number) => number % 2 == 0
 
 numbers.map(function(number) {
-    if (number > 1) {
+    if (number == 1) {
+        console.log(`${number} termasuk bilangan Ganjil`)
+    } else {
         if (isPrimeNumber(number)) {
             console.log(`${number} termasuk bilangan Prima`)
         } else if (isEvenNumber(number)) {
@@ -42,7 +44,5 @@ numbers.map(function(number) {
         } else {
             console.log(`${number} termasuk bilangan Ganjil`)
         }
-    } else if (number == 1) {
-        console.log(`${number} termasuk bilangan Ganjil`)
     }
 })
