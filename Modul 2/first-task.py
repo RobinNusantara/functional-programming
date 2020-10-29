@@ -1,39 +1,36 @@
-import operator
+import emoji
 
 print('\n<<<Kegiatan 1>>>\n')
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+redHeart = emoji.emojize(':red_heart:', variant='emoji_type')
 
-# Map & Pure Function
+words = ['I', redHeart, 'PYTHON', 'AND', 'JAVASCRIPT']
 
-def addition(listNumber):
-    newListNumber = []
-    for number in numbers:
-        newListNumber.append(operator.add(number, 2))
-    return newListNumber
+print('<<<Map>>>\n')
+def iterateWords(wordList):
+    newListWord = []
+    for word in wordList:
+        newListWord.append(word)
+    return newListWord
 
-pureAddition = addition(numbers)
-print(f'With Pure Function = {pureAddition}')
+print('With Pure Function')
+print(iterateWords(words))
 
-# def addition(number):
-#     return number + 2
+print('With Map Function')
+print(list(map(lambda word: word, words)))
 
-mapAddition = list(map(lambda number: operator.add(number, 2), numbers))
-print(f'With Map Function = {mapAddition}\n')
+print('\n<<<Filter>>>\n')
+def filterWords(wordList):
+    newListWord = []
+    for word in wordList:
+        if 'A' in word:
+            newListWord.append(word)
+    return newListWord
 
-# Filter & Pure Function
+print('With Pure Function')
+print(filterWords(words))
 
-def evenNumber(listNumbers):
-    newListNumber = []
-    for number in listNumbers:
-        if number % 2 == 0:
-            newListNumber.append(number)
-    return newListNumber
-
-pureEvenNumbers = evenNumber(numbers)
-print(f'With Pure Function = {pureEvenNumbers}')
-
-filterEvenNumbers = list(filter(lambda number: number % 2 == 0, numbers))
-print(f'With Filter Function = {filterEvenNumbers}')
+print('With Filter Function')
+print(list(filter(lambda word: 'A' in  word, words)))
 
 #Robb - Mobile & Web Enthusiast
