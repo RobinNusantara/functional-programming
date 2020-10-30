@@ -24,21 +24,17 @@ def defineLetterCase(word, letterCase):
     else:
         return word
 
-zippedFirstList = zippedWords(firstList, secondList)
-print(zippedFirstList)
+print(zippedWords(firstList, secondList))
 
 zippedSecondList = zippedWords(firstList, secondList)
-convertLetterSecondList = convertWords(zippedSecondList, 'lowercase')
-print(list(convertLetterSecondList))
+print(list(convertWords(zippedSecondList, 'lowercase')))
 
-capitalizeFirstList = convertWords(firstList, 'capitalize')
-capitalizeSecondList = convertWords(secondList, 'capitalize')
-zippedThirdList = zippedWords(capitalizeFirstList, capitalizeSecondList)
-print(tuple(zippedThirdList))
+converFirstList = convertWords(firstList, 'capitalize')
+convertSecondList = convertWords(secondList, 'capitalize')
+print(tuple(zippedWords(converFirstList, convertSecondList)))
 
 zippedFourthList = zippedWords(firstList, secondList)
-convertLetterFourthList = convertWords(zippedFourthList, 'uppercase')
-print(tuple(convertLetterFourthList))
+print(tuple(convertWords(zippedFourthList, 'uppercase')))
 
 zippedDict = zip(firstList, secondList)
 print(dict(zippedDict))
