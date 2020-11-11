@@ -1,5 +1,8 @@
+import sys
 import operator
 import functools
+sys.path.insert(1, '/Users/robin/VisualStudioCodeProjects/functional-programming/utils')
+from utils import printDictInsideList
 
 # Kegiatan 1
 print('\n<<<Original Dictionary>>>\n')
@@ -49,11 +52,7 @@ for product in products:
 
 print('\n<<<Kegiatan 1.3>>>\n')
 
-
-for product in products:
-    print('Product Name    : ', product.get("productName"))
-    print('Product Amount  : ', product.get("productAmount"))
-    print('---------')
+printDictInsideList(products)
 
 print('\n<<<Kegiatan 1.4>>>\n')
 products.append({
@@ -75,10 +74,8 @@ for product in products:
     print(product)
 
 print('\n<<<Kegiatan 1.6>>>\n')
-for product in products:
-    print('Product Name    : ', product.get("productName"))
-    print('Product Amount  : ', product.get("productAmount"))
-    print('---------')
+
+printDictInsideList(products)
 
 print('\n<<<Kegiatan 1.7>>>\n')
 products[3].update({'productQuality': 'Second'})
@@ -89,17 +86,15 @@ for product in products:
     print(product)
 
 print('\n<<<Kegiatan 1.8>>>\n')
-for product in products:
-    print('Product Name    : ', product.get("productName"))
-    print('Product Amount  : ', product.get("productAmount"))
-    print('---------')
+printDictInsideList(products)
 
 print('\n<<<Kegiatan 1.9>>>\n')
 
-totalAmount = functools.reduce(lambda acc, val: acc + val.get('productAmount'), products, 0)
-print(f'Total Amount : {totalAmount}')
-totalPrice = functools.reduce(lambda acc, val: acc + val.get('productPrice'), products, 0)
-print(f'Total Price  : {totalPrice}')
+def countTotal(key, itemList):
+    return functools.reduce(lambda acc, val:  acc + val.get(key), itemList, 0)
+
+print(f'Total Amount : {countTotal("productAmount", products)}')
+print(f'Total Price  : {countTotal("productPrice", products)}')
 
 print('\n<<<Kegiatan 1.10>>>\n')
 
