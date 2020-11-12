@@ -52,7 +52,8 @@ def filterDict(dictionary, selectedKey):
             temp.update({key: dictionary.get(key)})
     return temp
 
-pprint.pprint(list(map(lambda product: filterDict(product, ['productAmount', 'productPrice']), products)))
+getSelectedKey = lambda product: filterDict(product, ['productAmount', 'productPrice'])
+pprint.pprint(list(map(getSelectedKey, products)))
 
 print('\n<<<Kegiatan 1.2>>>\n')
 products.pop(1)

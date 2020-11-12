@@ -39,8 +39,8 @@ students = [
 
 for idx, student in enumerate(students):
     for key in student:
-        if student[key] == '':
-            userInput = input(f'Input value {key} in {idx} : ')
+        if student.get(key) == '':
+            userInput = input(f'Input value {key} in index {idx} : ')
             student.update({key: userInput})
 
 print('\n<<<Modified Dictionary>>>\n')

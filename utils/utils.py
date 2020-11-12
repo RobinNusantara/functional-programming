@@ -3,5 +3,5 @@ def printDictInsideList(dictList):
         for key in dictItem:
             print(f'{key} : {dictItem.get(key)}')
         print('-----')
-    return dictItem
+    return dictList
     
