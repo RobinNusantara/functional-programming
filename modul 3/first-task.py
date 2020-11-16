@@ -3,7 +3,7 @@ import operator
 import functools
 import pprint
 sys.path.insert(1, '/Users/robin/VisualStudioCodeProjects/functional-programming/utils')
-from utils import printDictInsideList
+from utils_func import printDictInsideList
 
 # Kegiatan 1
 print('\n<<<Original Dictionary>>>\n')

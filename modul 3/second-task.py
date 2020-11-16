@@ -1,8 +1,7 @@
 import sys
+import pprint
 sys.path.insert(1, '/Users/robin/VisualStudioCodeProjects/functional-programming/utils')
-from utils import printDictInsideList
-
-print('\n<<<Original Dictionary>>>\n')
+from utils_func import printDictInsideList
 
 students = [
     {
@@ -37,14 +36,25 @@ students = [
     },
 ]
 
-for idx, student in enumerate(students):
-    for key in student:
-        if student.get(key) == '':
-            userInput = input(f'Input value {key} in index {idx} : ')
-            student.update({key: userInput})
+print('<<<Original Dictionary>>>\n')
 
+pprint.pprint(students)
+print()
+
+def detectEmptyValue(dictionaries):
+    for idx, dictionary in enumerate(dictionaries):
+        for key in dictionary:
+            if dictionary.get(key) == '':
+                print('-------')
+                print(f'\n{dictionaries[idx]}')
+                print(f'\nWe detected there\'s an empty value in {key} key in dictionary line {idx + 1}\n')
+                userInput = input(f'Please input value in {key} key in dictionary line {idx + 1} : ')
+                dictionary.update({key: userInput})
+    return dictionaries
+        
 print('\n<<<Modified Dictionary>>>\n')
 
+detectEmptyValue(students)
 printDictInsideList(students)
 
 #Robb Mobile & Web Enthusiast
