@@ -15,8 +15,8 @@
 # equivalent
 # print(alphabet[5:])
 
-# 089613128351
 # 085812257711
+# 089613128351
 # 081237756640
 
 # negative index
@@ -30,19 +30,33 @@ phoneNumbers = []
 length = int(input('Define how many phone numbers you want to input : '))
 
 for index in range(length):
-    element = input(f'Input {index} Phone Number : ')
+    element = input(f'Input phone number - {index + 1}: ')
     phoneNumbers.append(element)
 
 def formatPhoneNumber(func):
-    def phoneNumber(number):
-        for index in number:
-            func([f'+62 {index[-11:-5]} {index[-5:]}'])
+    def phoneNumber(numbers):
+        _slice = lambda elm: f'+62 {elm[slice(-11, -5)]} {elm[slice(-5, None)]}'
+        func(map(_slice, numbers))
     return phoneNumber
 
-@formatPhoneNumber
-def sortPhoneNumber(numbers):
-    print(*sorted(numbers), sep="\n")
+def sortPhoneNumber(func):
+    def phoneNumber(numbers):
+        func(sorted(numbers))
+    return phoneNumber
 
-sortPhoneNumber(phoneNumbers)
+@sortPhoneNumber
+@formatPhoneNumber
+def sortedList(numbers):
+    print(*numbers, sep='\n')
+
+@formatPhoneNumber
+def unsortedList(numbers):
+    print(*numbers, sep='\n')
+
+print('\n<<<Sorted List>>>\n')
+sortedList(phoneNumbers)
+
+print('\n<<<Unsorted List>>>\n')
+unsortedList(phoneNumbers)
 
 #Robb Mobile & Web Enthusiast

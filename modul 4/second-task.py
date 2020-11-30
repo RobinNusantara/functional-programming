@@ -46,10 +46,8 @@ def sortList(func):
 @sortList
 def printStudents(students, key):
     for student in students:
-        if student.get('gender') == 'Male':
-            print(f'Mr. {student.get("firstName")} {student.get("lastName")}')
-        else:
-            print(f'Ms. {student.get("firstName")} {student.get("lastName")}')
+        name = student.get("firstName") + student.get("lastName")
+        print(f'Mr {name}' if student.get('gender') == 'Male' else f'Ms {name}')
         
 printStudents(students, 'age')
 
