@@ -22,4 +22,4 @@ def decoratorMultipiler(func):
 def multiplyDecorator(firstValue, secondValue):
     print(f'Result : {firstValue * secondValue}')
 
-multiplyDecorator(int(firstValue), int(secondValue))
+multiplyDecorator(firstValue, secondValue)
