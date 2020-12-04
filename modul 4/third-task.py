@@ -1,15 +1,14 @@
 #closure
 
-firstValue = input('Input First Value : ')
-secondValue = input('Input Second Value : ')
+firstValue = int(input('Input First Value : '))
+secondValue = int(input('Input Second Value : '))
 
 def closureMultiplier(y):
     def multiply(x):
         return x * y
     return multiply
 
-multiplyClosure = closureMultiplier(int(firstValue))
-result = multiplyClosure(int(secondValue))
+result = closureMultiplier(firstValue)(secondValue)
 print(f'Result : {result}')
 
 #decorator
@@ -21,6 +20,6 @@ def decoratorMultipiler(func):
 
 @decoratorMultipiler
 def multiplyDecorator(firstValue, secondValue):
-    print(firstValue * secondValue)
+    print(f'Result : {firstValue * secondValue}')
 
 multiplyDecorator(int(firstValue), int(secondValue))
